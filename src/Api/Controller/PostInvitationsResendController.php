@@ -30,8 +30,7 @@ class PostInvitationsResendController extends AbstractController
         foreach ($data as $row) {
             $message = (new SendInvitationMessage())->setId($row->id)->setMessage('You have been invited to join our awesome organization');
             $this->bus->dispatch($message);
-            // file_put_contents(__DIR__.'/../../../var/log/post_invitations.log', $row->id . "\n", FILE_APPEND);
         }
-        return JsonResponse::create($data);
+        return JsonResponse::create(null, 204);
     }
 }

@@ -1,0 +1,35 @@
+openapi: 3.0.2
+info:
+  title: 'Symfony async poc'
+  description: 'Symfony async poc'
+  version: '1.0'
+paths:
+  '/async/bulk/invitations/send':
+    post:
+      tags:
+        - Invitations
+      summary: 'Send multiple invitations'
+      description: 'Send multiple invitations'
+      operationId: api_async_bulk_invitations_send_post
+      responses:
+        204:
+          description: 'No content'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#components/schemas/Bulk.InvitationIds'
+components:
+  schemas:
+    Bulk.InvitationIds:
+      type: array
+      items:
+        $ref: '#/components/schemas/Bulk.InvitationIds.InvitationId'
+    Bulk.InvitationIds.InvitationId:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          nullable: false
+          example: 182

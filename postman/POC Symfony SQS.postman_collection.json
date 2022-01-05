@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "b0a8481b-0144-4d5a-a23f-915f982adf27",
+		"name": "POC Symfony SQS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send invitations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\"id\":10},\n    {\"id\":20},\n    {\"id\":30},\n    {\"id\":40},\n    {\"id\":50},\n    {\"id\":60},\n    {\"id\":70},\n    {\"id\":80},\n    {\"id\":90},\n    {\"id\":100}\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/async/bulk/invitations/send",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"async",
+						"bulk",
+						"invitations",
+						"send"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
