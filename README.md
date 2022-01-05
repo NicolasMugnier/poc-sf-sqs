@@ -29,3 +29,10 @@ The API call will just write data into a log file : `var/log/post_invitations.lo
 ## Transport
 
 Messages are push and consume from Amazon SQS through the AWS API. 
+
+## AWS settings
+
+- create an aws account
+- create a new user with only SQS permissions (AmazonSQSFullAccess)
+- copy / paste AWS credentials (accountID, AccessKey, SecretKey) in .env.local file
+- create a new queue called oc-async-poc and set the new created user as main sender and receiver
