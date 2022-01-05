@@ -5,9 +5,20 @@ framework:
 
         transports:
             # https://symfony.com/doc/current/messenger.html#transport-configuration
-            async: '%env(MESSENGER_TRANSPORT_DSN)%'
-            failed: '%env(MESSENGER_TRANSPORT_DSN)%?queue_name=failed'
+            # async: '%env(MESSENGER_TRANSPORT_DSN)%'
+            # failed: '%env(MESSENGER_TRANSPORT_DSN)%?queue_name=failed'
+            sqs:
+                dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+                options:
+                    access_key: '%env(AWS_ACCESS_KEY)%'
+                    account: '%env(AWS_ACCOUNT_ID)%'
+                    auto_setup: false
+                    debug: false
+                    endpoint: https://sqs.eu-west-3.amazonaws.com
+                    queue_name: oc-async-poc
+                    region: eu-west-3
+                    secret_key: '%env(AWS_SECRET_KEY)%'
 
         routing:
             # Route your messages to the transports
-            'App\Business\Async\Message\SendInvitationMessage': async
+            'App\Business\Async\Message\SendInvitationMessage': sqs

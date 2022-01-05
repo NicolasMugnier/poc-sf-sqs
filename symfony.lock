@@ -1,4 +1,10 @@
 {
+    "async-aws/core": {
+        "version": "1.13.0"
+    },
+    "async-aws/sqs": {
+        "version": "1.7.0"
+    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99.4"
     },
@@ -97,6 +103,9 @@
     "psr/log": {
         "version": "1.1.4"
     },
+    "symfony/amazon-sqs-messenger": {
+        "version": "v5.4.0"
+    },
     "symfony/cache": {
         "version": "v4.4.36"
     },
@@ -181,6 +190,9 @@
             "src/Controller/.gitignore",
             "src/Kernel.php"
         ]
+    },
+    "symfony/http-client": {
+        "version": "v5.4.2"
     },
     "symfony/http-client-contracts": {
         "version": "v2.5.0"

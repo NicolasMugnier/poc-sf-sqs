@@ -26,6 +26,6 @@ Note : a postman collection is available in the project
 
 The API call will just write data into a log file : `var/log/post_invitations.log`
 
-## Database
+## Transport
 
-A simple SQLite is used, it's located into `var/data.db`
+Messages are push and consume from Amazon SQS through the AWS API. 
