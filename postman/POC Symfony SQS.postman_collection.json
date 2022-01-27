@@ -38,6 +38,29 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Send Segment Notification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/segment/send",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"segment",
+						"send"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
