@@ -31,3 +31,6 @@ services:
     # please note that last definitions always *replace* previous ones
     Symfony\Component\Messenger\Bridge\AmazonSqs\Transport\AmazonSqsTransportFactory:
         tags: [ messenger.transport_factory ]
+
+    messenger.transport.custom_serializer:
+        alias: App\Transport\Serialization\CustomSerializer

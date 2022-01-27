@@ -18,7 +18,20 @@ framework:
                     queue_name: oc-async-poc
                     region: eu-west-3
                     secret_key: '%env(AWS_SECRET_KEY)%'
+            sqs-segment:
+                dsn: '%env(MESSENGER_TRANSPORT_DSN_SEGMENT)%'
+                serializer: messenger.transport.custom_serializer
+                options:
+                    access_key: '%env(AWS_ACCESS_KEY)%'
+                    account: '%env(AWS_ACCOUNT_ID)%'
+                    auto_setup: false
+                    debug: false
+                    endpoint: https://sqs.eu-west-1.amazonaws.com
+                    queue_name: Segment
+                    region: eu-west-1
+                    secret_key: '%env(AWS_SECRET_KEY)%'
 
         routing:
             # Route your messages to the transports
             'App\Business\Async\Message\SendInvitationMessage': sqs
+            'App\Business\Async\Message\SegmentMessage': sqs-segment
